@@ -3,11 +3,15 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use Illuminate\Support\Facades\Validator;
 use App\userPanti;
 
 class UserPantiController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('guest');
+    }
     public function index()
     {
       return view('front.panti.index');
@@ -16,6 +20,21 @@ class UserPantiController extends Controller
     public function show()
     {
       return view('front.panti.show');
+    }
+
+    protected function validator(array $data)
+    {
+        return Validator::make($data, [
+          'nama_panti' => 'required|string|max:255',
+          'email_panti' => 'required|string|email|max:255|unique:user_pantis',
+          'password_panti' => 'required|string|min:6|confirmed',
+          'alamat_panti' => 'required',
+          'kondisi_panti' => 'required',
+          'jml_penghuni' => 'required',
+          'nama_pemilik' => 'required|string|max:255',
+          'kondisi_panti' => 'required',
+          'kontak_panti' => 'required'
+        ]);
     }
 
     public function create()

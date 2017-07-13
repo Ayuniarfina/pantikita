@@ -20,7 +20,7 @@ class CreateUserPantisTable extends Migration
         $table->string('password_panti');
         $table->string('alamat_panti');
         $table->string('kondisi_panti');
-        $table->string('jml_penghuni');
+        $table->integer('jml_penghuni');
         $table->string('nama_pemilik');
         $table->string('kontak_panti');
         $table->string('foto');
