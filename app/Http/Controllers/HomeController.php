@@ -12,7 +12,6 @@ class HomeController extends Controller
         $user_pantis = userPanti::all();
         return view('front.index',compact('user_pantis'));
     }
-    
 
     /**
      * Create a new controller instance.

@@ -18,6 +18,12 @@ class UserPantiController extends Controller
       return view('front.panti.index',compact('user_pantis'));
     }
 
+    public function list()
+    {
+        $user_pantis = userPanti::all();
+        return view('front.panti.list',compact('user_pantis'));
+    }
+
     public function show($id)
     {
       $user_pantis = userPanti::find($id);
