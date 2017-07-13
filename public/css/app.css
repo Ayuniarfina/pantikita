@@ -4972,7 +4972,7 @@ a.badge:focus {
   background-image: url('1.jpg');
   background-position: center center center center;
   background-size: cover;
-
+  
 }
 .jumbotron h1, h2, h3,
 .jumbotron .h1 .h2 .h3 {
@@ -6780,6 +6780,6 @@ button.close {
 .text-50 {
   font-size: 50px;
 }
-.berkas {
+.footer-text {
   padding-left: 40px;
 }

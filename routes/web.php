@@ -1,13 +1,14 @@
 <?php
 
-Route::get('/', 'UserPantiController@index');
+Route::get('/', 'HomeController@index');
+
+
+Route::get('/panti-list', 'UserPantiController@index');
+Route::get('/panti-detail/{user_pantis}', 'UserPantiController@show');
 Route::get('/userPanti/create', 'UserPantiController@create');
 Route::post('/userPanti', 'UserPantiController@store');
 
-Route::get('/', 'DonasiController@index');
 Route::get('/donasi/create', 'DonasiController@create');
 Route::post('/donasi', 'DonasiController@store');
 
-Auth::routes();
-
-Route::get('/home', 'HomeController@index')->name('home');
+Auth::routes();	

@@ -8,18 +8,21 @@ use App\userPanti;
 
 class UserPantiController extends Controller
 {
-    public function __construct()
-    {
-        $this->middleware('guest');
-    }
+    //public function __construct()
+    //{
+    //    $this->middleware('guest');
+    //}
     public function index()
     {
-      return view('front.panti.index');
+      $user_pantis = userPanti::latest()->all();
+      return view('front.panti.index',compact('user_pantis'));
     }
 
-    public function show()
+    public function show($id)
     {
-      return view('front.panti.show');
+      $user_pantis = userPanti::find($id);
+      return view('front.panti.show',compact('user_pantis'));
+      //return $user_pantis->id;
     }
 
     protected function validator(array $data)
