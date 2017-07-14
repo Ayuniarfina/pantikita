@@ -18,11 +18,11 @@ class UserPantiController extends Controller
       return view('front.panti.index',compact('user_pantis'));
     }
 
-    public function list()
+    /*public function list()
     {
         $user_pantis = userPanti::all();
         return view('front.panti.list',compact('user_pantis'));
-    }
+    }*/
 
     public function show($id)
     {
@@ -71,8 +71,6 @@ class UserPantiController extends Controller
       $user_pantis->foto = $fileName;
 
       $user_pantis->save();
-
-      //$user_pantis = userPanti::create(request(['nama_panti', 'email_panti', 'password_panti', 'alamat_panti', 'kondisi_panti', 'jml_penghuni', 'nama_pemilik', 'kondisi_panti', 'kontak_panti']));
 
       return redirect('/');
     }
