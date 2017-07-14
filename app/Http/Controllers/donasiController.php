@@ -4,9 +4,10 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-use App\Donasi;
+use App\donasi;
+use App\userPanti;
 
-class DonasiController extends Controller
+class donasiController extends Controller
 {
   public function index()
   {
@@ -18,18 +19,19 @@ class DonasiController extends Controller
     return view('front.donasi.show');
   }
 
-  public function create()
+  public function create($id_panti)
   {
-    return view('front.donasi.form');
+    $panti =userPanti::where('id',$id_panti)->first();
+    return view('front.donasi.form',compact('panti'));
   }
 
   public function store(Request $request)
   {
-    $donasis = new Donasi;
+    $donasis = new donasi;
 
     $donasis->nominal = $request->input('nominal');
     $donasis->pembayaran = $request->input('pembayaran');
-
+    $donasis->panti_id = $request->input('panti_id');
     $donasis->save();
     return redirect('/');
   }

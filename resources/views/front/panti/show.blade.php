@@ -25,10 +25,24 @@
   
 
     <div class="col-sm-4">
-    <a href="donasi-form" class="btn btn-primary btn-lg btn-block">
+    <a href="../donasi/create/{{ $user_pantis->id }}" class="btn btn-primary btn-lg btn-block">
     <h4  >Donasi</h4></a>
 
     <br>
+
+    <div class="panel panel-primary">
+      <div class="panel-body text-center">
+        <h3>Donasi terkumpul:</h3>
+        <h4>Rp {{ number_format($total) }}</h4>
+      </div>
+    </div>
+
+    <div class="panel panel-primary">
+      <div class="panel-body text-center">
+        <h3>Jumlah donatur:</h3>
+        <h4>{{ $orang }} donatur</h4> 
+      </div>
+    </div>
 
     <div class="panel panel-primary">
       <div class="panel-body text-center">

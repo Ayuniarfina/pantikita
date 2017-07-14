@@ -4,7 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Donasi extends Model
+class donasi extends Model
 {
-    protected $fillable = ['nominal', 'pembayaran',];
+  protected $fillable = ['nominal', 'pembayaran','panti_id'];
 }
