@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 use App\userPanti;
+use App\donasi;
 
 class UserPantiController extends Controller
 {
@@ -14,38 +15,24 @@ class UserPantiController extends Controller
     //}
     public function index()
     {
-      $user_pantis = userPanti::latest()->all();
+      $user_pantis = userPanti::all();
       return view('front.panti.index',compact('user_pantis'));
     }
 
-    /*public function list()
+    public function list()
     {
         $user_pantis = userPanti::all();
         return view('front.panti.list',compact('user_pantis'));
-    }*/
+    }
 
     public function show($id)
     {
       $user_pantis = userPanti::find($id);
-      return view('front.panti.show',compact('user_pantis'));
+      $total = donasi::find($id)->sum('nominal');
+      $orang = donasi::find($id)->count('nominal');
+      return view('front.panti.show',compact('user_pantis','total','orang'));
       //return $user_pantis->id;
     }
-
-    protected function validator(array $data)
-    {
-        return Validator::make($data, [
-          'nama_panti' => 'required|string|max:255',
-          'email_panti' => 'required|string|email|max:255|unique:user_pantis',
-          'password_panti' => 'required|string|min:6|confirmed',
-          'alamat_panti' => 'required',
-          'kondisi_panti' => 'required',
-          'jml_penghuni' => 'required',
-          'nama_pemilik' => 'required|string|max:255',
-          'kondisi_panti' => 'required',
-          'kontak_panti' => 'required'
-        ]);
-    }
-
     public function create()
     {
       return view('front.panti.form');
@@ -71,6 +58,11 @@ class UserPantiController extends Controller
       $user_pantis->foto = $fileName;
 
       $user_pantis->save();
+      $this->validate($request, [
+    'nama_panti' => 'required|unique:posts|max:255',
+]);
+
+      //$user_pantis = userPanti::create(request(['nama_panti', 'email_panti', 'password_panti', 'alamat_panti', 'kondisi_panti', 'jml_penghuni', 'nama_pemilik', 'kondisi_panti', 'kontak_panti']));
 
       return redirect('/');
     }

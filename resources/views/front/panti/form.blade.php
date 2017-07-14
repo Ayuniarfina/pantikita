@@ -67,12 +67,8 @@
 
         <div class="col-lg-10">
 				    <label for="foto" class="col-lg-2 control-label">Foto Panti</label>
-<<<<<<< HEAD
 				    <br>
 				    <input type="file" class="col-lg-10" name="foto" required="">
-=======
-				    <input type="file" class="col-lg-10" name="foto">
->>>>>>> 7bdf8376ada774977ff88728382f12d0a14e5458
 			  </div>
 
 		    <div class="form-group">

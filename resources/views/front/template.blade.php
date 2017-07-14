@@ -20,23 +20,12 @@
 <div id="app">
   <nav class="navbar navbar-default">
     <div class="navbar-header">
-<<<<<<< HEAD
-=======
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-      </button>
->>>>>>> 7bdf8376ada774977ff88728382f12d0a14e5458
       <a class="navbar-brand" href="/">Panti Kita</a>
     </div>
+
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
-<<<<<<< HEAD
         <li><a href="../panti-list"><h4>Panti</h4></a></li>
-=======
-        <li><a href="panti-list"><h4>Panti</h4></a></li>
-      </ul>
-      <ul class="nav navbar-nav navbar-right">
-        <li><a href="register"><h4>Daftar</h4></a></li>
->>>>>>> 7bdf8376ada774977ff88728382f12d0a14e5458
       </ul>
       <!-- Right Side Of Navbar -->
                     <ul class="nav navbar-nav navbar-right">
