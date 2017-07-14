@@ -67,7 +67,7 @@
 
         <div class="col-lg-10">
 				    <label for="foto" class="col-lg-2 control-label">Foto Panti</label>
-				    <input type="file" class="form-control" name="foto">
+				    <input type="file" class="col-lg-10" name="foto">
 			  </div>
 
 		    <div class="form-group">
